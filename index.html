@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0b3034">
+  <meta name="description" content="同途：把旅途里的花费、照片、声音和故事，一起装进口袋。">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="同途">
+  <title>同途 · 把旅途装进口袋</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="assets/app-icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/app-icon.svg">
+  <link rel="stylesheet" href="app.css">
+  <link rel="stylesheet" href="extras.css">
+</head>
+<body>
+  <svg class="svg-sprite" aria-hidden="true">
+    <symbol id="i-home" viewBox="0 0 24 24"><path d="m3 10 9-7 9 7v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"/><path d="M9 21v-8h6v8"/></symbol>
+    <symbol id="i-wallet" viewBox="0 0 24 24"><path d="M4 6.5h15a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h13"/><path d="M16 11h5v5h-5a2.5 2.5 0 0 1 0-5Z"/></symbol>
+    <symbol id="i-route" viewBox="0 0 24 24"><circle cx="6" cy="18" r="2.5"/><circle cx="18" cy="6" r="2.5"/><path d="M8.5 18h2.2a3.3 3.3 0 0 0 0-6.6h-1.4a3.3 3.3 0 0 1 0-6.6h3.2"/><path d="m13.8 2.5 2.5 2.3-2.5 2.4"/></symbol>
+    <symbol id="i-image" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="4"/><circle cx="9" cy="9" r="2"/><path d="m21 15-4.5-5-9.5 11"/></symbol>
+    <symbol id="i-book" viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V4H6.5A2.5 2.5 0 0 0 4 6.5Z"/><path d="M8 8h8M8 12h6"/></symbol>
+    <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4.5 4.5L19 6"/></symbol>
+    <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></symbol>
+    <symbol id="i-down" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+    <symbol id="i-arrow-left" viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></symbol>
+    <symbol id="i-bell" viewBox="0 0 24 24"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9"/><path d="M10 21h4"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+    <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M16 3v4M8 3v4M3 10h18"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+    <symbol id="i-camera" viewBox="0 0 24 24"><path d="M14.5 4 16 7h3a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h3l1.5-3h5Z"/><circle cx="12" cy="13" r="4"/></symbol>
+    <symbol id="i-video" viewBox="0 0 24 24"><rect x="3" y="5" width="14" height="14" rx="3"/><path d="m17 10 4-2v8l-4-2"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><path d="m8 5 11 7-11 7Z"/></symbol>
+    <symbol id="i-pause" viewBox="0 0 24 24"><path d="M8 5v14M16 5v14"/></symbol>
+    <symbol id="i-pen" viewBox="0 0 24 24"><path d="m15 5 4 4L8 20l-5 1 1-5Z"/><path d="m13 7 4 4"/></symbol>
+    <symbol id="i-food" viewBox="0 0 24 24"><path d="M5 3v7a3 3 0 0 0 3 3h2v8M10 3v8M15 3v18M15 3c3 0 5 2 5 5s-2 5-5 5"/></symbol>
+    <symbol id="i-plane" viewBox="0 0 24 24"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></symbol>
+    <symbol id="i-bed" viewBox="0 0 24 24"><path d="M3 18v-7h18v7M3 14h18M5 11V7h6v4M3 18v2M21 18v2"/><path d="M11 11V8h6a3 3 0 0 1 3 3"/></symbol>
+    <symbol id="i-ticket" viewBox="0 0 24 24"><path d="M3 9a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2 3 3 0 0 0 0 6 2 2 0 0 1-2 2H5a2 2 0 0 1-2-2 3 3 0 0 0 0-6Z"/><path d="M13 7v10"/></symbol>
+    <symbol id="i-bag" viewBox="0 0 24 24"><path d="M5 8h14l-1 13H6Z"/><path d="M9 9V6a3 3 0 0 1 6 0v3"/></symbol>
+    <symbol id="i-scan" viewBox="0 0 24 24"><path d="M3 8V5a2 2 0 0 1 2-2h3M16 3h3a2 2 0 0 1 2 2v3M21 16v3a2 2 0 0 1-2 2h-3M8 21H5a2 2 0 0 1-2-2v-3"/><path d="M7 15V9h4a2 2 0 0 1 0 4H7M14 9h3v6h-3Z"/></symbol>
+    <symbol id="i-sparkle" viewBox="0 0 24 24"><path d="M12 2c0 5-3 8-8 8 5 0 8 3 8 8 0-5 3-8 8-8-5 0-8-3-8-8Z"/><path d="M19 16c0 2-1 3-3 3 2 0 3 1 3 3 0-2 1-3 3-3-2 0-3-1-3-3Z"/></symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8l1.1 1.1L12 21l7.8-7.5 1.1-1.1a5.5 5.5 0 0 0-.1-7.8Z"/></symbol>
+    <symbol id="i-share" viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.6 10.5 6.8-4M8.6 13.5l6.8 4"/></symbol>
+    <symbol id="i-settings" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.9l.1.1-2.8 2.8-.1-.1a1.7 1.7 0 0 0-1.9-.3 1.7 1.7 0 0 0-1 1.6v.2h-4V21a1.7 1.7 0 0 0-1-1.6 1.7 1.7 0 0 0-1.9.3l-.1.1L4.2 17l.1-.1a1.7 1.7 0 0 0 .3-1.9A1.7 1.7 0 0 0 3 14H2.8v-4H3a1.7 1.7 0 0 0 1.6-1 1.7 1.7 0 0 0-.3-1.9L4.2 7 7 4.2l.1.1A1.7 1.7 0 0 0 9 4.6a1.7 1.7 0 0 0 1-1.6v-.2h4V3a1.7 1.7 0 0 0 1 1.6 1.7 1.7 0 0 0 1.9-.3l.1-.1L19.8 7l-.1.1a1.7 1.7 0 0 0-.3 1.9 1.7 1.7 0 0 0 1.6 1h.2v4H21a1.7 1.7 0 0 0-1.6 1Z"/></symbol>
+    <symbol id="i-more" viewBox="0 0 24 24"><circle cx="5" cy="12" r="1"/><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/></symbol>
+    <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></symbol>
+    <symbol id="i-eye-off" viewBox="0 0 24 24"><path d="m3 3 18 18M10.6 6.2A11 11 0 0 1 12 6c6.5 0 10 6 10 6a15 15 0 0 1-2.2 2.9M6.6 6.6C3.6 8.5 2 12 2 12s3.5 6 10 6a11 11 0 0 0 4.1-.8"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="11" rx="3"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M10 18h4"/></symbol>
+    <symbol id="i-message" viewBox="0 0 24 24"><path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4Z"/><path d="M8 9h8M8 13h5"/></symbol>
+    <symbol id="i-cloud" viewBox="0 0 24 24"><path d="M17 19H7a5 5 0 1 1 1.5-9.8A7 7 0 0 1 22 12a4 4 0 0 1-5 7Z"/></symbol>
+    <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12M7 10l5 5 5-5M4 21h16"/></symbol>
+    <symbol id="i-log-out" viewBox="0 0 24 24"><path d="M10 17l5-5-5-5M15 12H3M14 4h5a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-5"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-5"/></symbol>
+    <symbol id="i-compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m16 8-2.5 5.5L8 16l2.5-5.5Z"/></symbol>
+    <symbol id="i-radio" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="14" rx="3"/><path d="m7 7 10-4M7 12h3M7 16h7"/><circle cx="17" cy="13" r="2.5"/></symbol>
+    <symbol id="i-gift" viewBox="0 0 24 24"><rect x="3" y="8" width="18" height="13" rx="2"/><path d="M12 8v13M3 12h18M7.5 8C4 8 3 3 7 3c2.5 0 5 5 5 5M16.5 8C20 8 21 3 17 3c-2.5 0-5 5-5 5"/></symbol>
+    <symbol id="i-vote" viewBox="0 0 24 24"><path d="m4 12 5 5L20 6M4 20h16"/></symbol>
+    <symbol id="i-wifi-off" viewBox="0 0 24 24"><path d="m2 2 20 20M8.5 8.5A10 10 0 0 1 22 9M2 9a15 15 0 0 1 3-1.8M5 13a10 10 0 0 1 5-2M8.5 17a5 5 0 0 1 6.8-.2M12 21h.01"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M21 13.2A9 9 0 0 1 10.8 3 9 9 0 1 0 21 13.2Z"/></symbol>
+  </svg>
+
+  <section class="auth-screen screen-active" id="authScreen">
+    <div class="auth-visual">
+      <img class="auth-cover" src="assets/cover-ridge.svg" alt="晨光照耀下的山脊与湖泊">
+      <div class="auth-visual-shade"></div>
+      <div class="auth-visual-content">
+        <a class="app-logo light" href="#" aria-label="同途">
+          <span class="logo-mark"><svg viewBox="0 0 36 36"><path d="M8 25c2-8 8-15 19-18-1 11-7 19-16 21M8 29c3-5 8-9 15-12" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/><circle cx="26" cy="9" r="2.6" fill="currentColor"/></svg></span>
+          <span class="logo-word">同途<em>TONG TU</em></span>
+        </a>
+        <div class="auth-headline">
+          <span class="soft-pill"><i></i> 下一段故事，正在路上</span>
+          <h1>把一路的花费，<br>变成一生的回忆。</h1>
+          <p>账本、行程、照片与声音，都住在同一趟旅行里。</p>
+        </div>
+        <div class="auth-feature-row">
+          <article><span class="feature-icon mint"><svg class="icon"><use href="#i-wallet"/></svg></span><div><strong>轻松 AA</strong><small>自动算清每一笔</small></div></article>
+          <article><span class="feature-icon sun"><svg class="icon"><use href="#i-camera"/></svg></span><div><strong>旅途回忆</strong><small>照片与账单同行</small></div></article>
+          <article><span class="feature-icon coral"><svg class="icon"><use href="#i-sparkle"/></svg></span><div><strong>每日回响</strong><small>自动生成故事</small></div></article>
+        </div>
+      </div>
+      <div class="auth-floating-card auth-float-one"><span class="float-avatar">川</span><div><small>正在旅行</small><strong>川西环线 · Day 6</strong></div><span class="live-pill"><i></i>LIVE</span></div>
+      <div class="auth-floating-card auth-float-two"><span class="sparkle-orbit"><svg class="icon"><use href="#i-sparkle"/></svg></span><div><small>今日回响</small><strong>“雪山把清晨照亮了”</strong></div></div>
+    </div>
+    <div class="auth-panel">
+      <div class="auth-mobile-brand">
+        <span class="logo-mark"><svg viewBox="0 0 36 36"><path d="M8 25c2-8 8-15 19-18-1 11-7 19-16 21M8 29c3-5 8-9 15-12" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/><circle cx="26" cy="9" r="2.6" fill="currentColor"/></svg></span>
+        <span class="logo-word">同途<em>TONG TU</em></span>
+      </div>
+      <div class="auth-card">
+        <div class="auth-card-head">
+          <p class="eyebrow">WELCOME BACK</p>
+          <h2 id="authTitle">欢迎回到同途</h2>
+          <p id="authSubtitle">登录后继续整理你的川西旅途</p>
+        </div>
+        <div class="auth-tabs" role="tablist">
+          <button class="active" type="button" data-auth-tab="login">登录</button>
+          <button type="button" data-auth-tab="register">注册</button>
+        </div>
+        <form class="auth-form" id="loginForm" novalidate>
+          <label class="field-label"><span>手机号或邮箱</span><div class="input-shell"><svg class="icon"><use href="#i-phone"/></svg><input id="loginAccount" type="text" autocomplete="username" placeholder="请输入手机号或邮箱" value="13800000000"></div></label>
+          <label class="field-label"><span>密码</span><div class="input-shell"><svg class="icon"><use href="#i-lock"/></svg><input id="loginPassword" type="password" autocomplete="current-password" placeholder="请输入密码" value="123456"><button class="password-toggle" type="button" data-toggle-password="loginPassword"><svg class="icon"><use href="#i-eye"/></svg></button></div></label>
+          <div class="form-error" id="loginError" role="alert"></div>
+          <div class="auth-options"><label class="check-label"><input id="rememberLogin" type="checkbox" checked><span><svg class="icon"><use href="#i-check"/></svg></span>记住我</label><button type="button" class="text-link" id="forgotPassword">忘记密码？</button></div>
+          <button class="auth-submit" type="submit"><span>登录，继续旅程</span><svg class="icon"><use href="#i-chevron"/></svg></button>
+          <p class="demo-note">演示账号已填好，也可以直接点击下方体验。</p>
+          <button class="demo-button" type="button" id="demoLogin"><svg class="icon"><use href="#i-sparkle"/></svg>一键进入体验空间</button>
+        </form>
+        <form class="auth-form hidden" id="registerForm" novalidate>
+          <label class="field-label"><span>怎么称呼你</span><div class="input-shell"><svg class="icon"><use href="#i-user"/></svg><input id="registerName" type="text" autocomplete="name" placeholder="输入昵称"></div></label>
+          <label class="field-label"><span>手机号</span><div class="input-shell"><svg class="icon"><use href="#i-phone"/></svg><input id="registerPhone" type="tel" inputmode="numeric" autocomplete="tel" placeholder="输入手机号"></div></label>
+          <label class="field-label"><span>设置密码</span><div class="input-shell"><svg class="icon"><use href="#i-lock"/></svg><input id="registerPassword" type="password" autocomplete="new-password" placeholder="至少 6 位字符"><button class="password-toggle" type="button" data-toggle-password="registerPassword"><svg class="icon"><use href="#i-eye"/></svg></button></div></label>
+          <div class="form-error" id="registerError" role="alert"></div>
+          <label class="agreement-row"><input id="registerAgreement" type="checkbox" checked><span class="agreement-box"><svg class="icon"><use href="#i-check"/></svg></span><span>我已阅读并同意《用户协议》和《隐私说明》</span></label>
+          <button class="auth-submit" type="submit"><span>创建账号并出发</span><svg class="icon"><use href="#i-chevron"/></svg></button>
+        </form>
+        <div class="auth-divider"><span>或者使用</span></div>
+        <div class="social-login"><button type="button" data-social-login="微信"><span class="social-icon wechat"><svg class="icon"><use href="#i-message"/></svg></span>微信</button><button type="button" data-social-login="Apple"><span class="social-icon apple">●</span>Apple</button></div>
+        <p class="auth-legal">登录即代表你同意同途保护你的旅途数据。演示版不会上传任何内容。</p>
+      </div>
+      <div class="auth-footer"><span>© 2026 TONG TU</span><span>隐私 · 安全 · 陪伴</span></div>
+    </div>
+  </section>
+
+  <section class="logout-screen" id="logoutScreen">
+    <div class="logout-art"><span class="logout-sun"></span><span class="logout-cloud one"></span><span class="logout-cloud two"></span><span class="logout-hill back"></span><span class="logout-hill front"></span><div class="logout-illustration"><span class="logout-avatar" id="logoutAvatar">言</span><span class="logout-check"><svg class="icon"><use href="#i-check"/></svg></span></div></div>
+    <p class="eyebrow">UNTIL NEXT JOURNEY</p><h1>旅程已替你收好。</h1><p><strong id="logoutName">林予言</strong>，账单、照片和故事都安全保存在这台设备上。下次见。</p>
+    <button class="primary-button xl" type="button" id="reLoginButton">重新登录 <svg class="icon"><use href="#i-arrow-left"/></svg></button>
+    <button class="text-link logout-home" type="button" id="logoutHomeButton">回到登录首页</button><span class="logout-footnote">你的旅行数据不会被删除</span>
+  </section>
+
+  <div class="app-shell hidden" id="appShell">
+    <aside class="app-sidebar">
+      <a class="app-logo sidebar-logo" href="#" data-go-view="home"><span class="logo-mark"><svg viewBox="0 0 36 36"><path d="M8 25c2-8 8-15 19-18-1 11-7 19-16 21M8 29c3-5 8-9 15-12" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/><circle cx="26" cy="9" r="2.6" fill="currentColor"/></svg></span><span class="logo-word">同途<em>TONG TU</em></span></a>
+      <button class="trip-switcher" type="button" id="sidebarTripSwitcher"><span class="trip-thumb"><img src="assets/cover-ridge.svg" alt=""></span><span><small>正在进行</small><strong>川西环线</strong></span><span class="live-dot"></span><svg class="icon"><use href="#i-down"/></svg></button>
+      <nav class="sidebar-nav">
+        <p class="nav-caption">我的旅程</p>
+        <button class="side-nav-item active" type="button" data-go-view="home"><svg class="icon"><use href="#i-home"/></svg><span>旅途首页</span></button>
+        <button class="side-nav-item" type="button" data-go-view="ledger"><svg class="icon"><use href="#i-wallet"/></svg><span>旅行账本</span><em id="sidebarLedgerAmount">¥6,842</em></button>
+        <button class="side-nav-item" type="button" data-go-view="itinerary"><svg class="icon"><use href="#i-route"/></svg><span>行程时间线</span></button>
+        <button class="side-nav-item" type="button" data-go-view="moments"><svg class="icon"><use href="#i-image"/></svg><span>照片与声音</span><em id="sidebarMomentCount">128</em></button>
+        <button class="side-nav-item" type="button" data-go-view="book"><svg class="icon"><use href="#i-book"/></svg><span>旅行册</span><i class="nav-new">NEW</i></button>
+        <p class="nav-caption second">工具与陪伴</p>
+        <button class="side-nav-item" type="button" id="sidebarSafety"><svg class="icon"><use href="#i-shield"/></svg><span>旅行安全卡</span></button>
+        <button class="side-nav-item" type="button" data-go-view="profile"><svg class="icon"><use href="#i-user"/></svg><span>我的空间</span></button>
+      </nav>
+      <div class="sidebar-foot">
+        <button class="offline-status" type="button" data-toast="离线模式已开启，当前数据会保存在本机。"><span><svg class="icon"><use href="#i-wifi-off"/></svg></span><div><strong>离线也能记录</strong><small>数据已同步到本机</small></div><i></i></button>
+        <button class="sidebar-profile" type="button" data-go-view="profile"><span class="user-avatar avatar-user" data-user-initial>言</span><span><strong data-user-name>林予言</strong><small>查看个人空间</small></span><svg class="icon"><use href="#i-more"/></svg></button>
+      </div>
+    </aside>
+    <div class="app-main">
+      <header class="app-topbar">
+        <div class="mobile-brand"><span class="logo-mark mini"><svg viewBox="0 0 36 36"><path d="M8 25c2-8 8-15 19-18-1 11-7 19-16 21M8 29c3-5 8-9 15-12" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/><circle cx="26" cy="9" r="2.6" fill="currentColor"/></svg></span><span>同途</span></div>
+        <div class="topbar-trip"><span class="live-dot"></span><strong>川西环线</strong><span>Day 6 / 7</span></div>
+        <button class="topbar-search" type="button" id="openSearch"><svg class="icon"><use href="#i-search"/></svg><span>搜索账单、地点或回忆</span><kbd>⌘ K</kbd></button>
+        <div class="topbar-actions">
+          <button class="round-button notification-button" type="button" id="notificationButton"><svg class="icon"><use href="#i-bell"/></svg><i></i></button>
+          <div class="avatar-stack"><span class="user-avatar avatar-sage">周</span><span class="user-avatar avatar-coral">陈</span><span class="user-avatar avatar-user" data-user-initial>言</span></div>
+          <button class="topbar-profile" type="button" data-go-view="profile"><span class="user-avatar avatar-user" data-user-initial>言</span><span><small>你好</small><strong data-user-name>林予言</strong></span><svg class="icon"><use href="#i-down"/></svg></button>
+          <button class="primary-button compact add-expense-top" type="button" data-open-expense><svg class="icon"><use href="#i-plus"/></svg><span>记一笔</span></button>
+        </div>
+      </header>
+      <div class="global-search-panel" id="searchPanel" aria-hidden="true">
+        <div class="search-panel-inner"><svg class="icon"><use href="#i-search"/></svg><input id="globalSearchInput" type="search" placeholder="搜索地点、账单、日记或同行人"><kbd>ESC</kbd><button id="closeSearch" type="button"><svg class="icon"><use href="#i-close"/></svg></button></div>
+        <div class="search-quick"><span>最近搜索</span><button type="button">双桥沟</button><button type="button">牦牛火锅</button><button type="button">住宿</button><button type="button">11 月 2 日</button></div>
+        <div class="search-results" id="searchResults"></div>
+      </div>
+      <main class="view-stack" id="viewStack"></main>
+      <button class="floating-add" type="button" data-open-expense aria-label="快速记账"><svg class="icon"><use href="#i-plus"/></svg></button>
+      <nav class="bottom-nav">
+        <button class="active" type="button" data-go-view="home"><span><svg class="icon"><use href="#i-home"/></svg></span><small>首页</small></button>
+        <button type="button" data-go-view="ledger"><span><svg class="icon"><use href="#i-wallet"/></svg></span><small>账本</small></button>
+        <button class="bottom-add" type="button" data-open-expense><span><svg class="icon"><use href="#i-plus"/></svg></span></button>
+        <button type="button" data-go-view="moments"><span><svg class="icon"><use href="#i-image"/></svg></span><small>回忆</small></button>
+        <button type="button" data-go-view="profile"><span><svg class="icon"><use href="#i-user"/></svg></span><small>我的</small></button>
+      </nav>
+    </div>
+  </div>
+
+  <div class="modal-root" id="modalRoot"></div>
+  <div class="photo-lightbox" id="photoLightbox" aria-hidden="true">
+    <button class="lightbox-close" type="button"><svg class="icon"><use href="#i-close"/></svg></button><button class="lightbox-arrow previous" type="button"><svg class="icon"><use href="#i-chevron"/></svg></button>
+    <figure><img src="assets/moment-lake.svg" alt="旅行照片"><figcaption><div><small>11.02 · 08:16 · 四姑娘山</small><strong>雪山醒来之前</strong></div><div class="lightbox-actions"><button type="button" id="lightboxFavourite"><svg class="icon"><use href="#i-heart"/></svg>收藏</button><button type="button" data-toast="照片分享链接已复制。"><svg class="icon"><use href="#i-share"/></svg>分享</button></div></figcaption></figure>
+    <button class="lightbox-arrow next" type="button"><svg class="icon"><use href="#i-chevron"/></svg></button>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"><span class="toast-icon"><svg class="icon"><use href="#i-check"/></svg></span><span id="toastText"></span></div>
+  <div class="sync-overlay" id="syncOverlay" aria-hidden="true"><div class="sync-card"><span class="sync-spinner"><svg class="icon"><use href="#i-sparkle"/></svg></span><strong id="syncTitle">正在整理你的旅途</strong><p id="syncText">把照片、花费和心情放在一起…</p><div class="sync-progress"><span></span></div></div></div>
+  <input id="memoryFileInput" type="file" accept="image/*,video/*" multiple hidden>
+  <script src="app-v2.js"></script>
+</body>
+</html>
